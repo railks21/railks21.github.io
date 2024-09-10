@@ -1,0 +1,20 @@
+<div>
+    <h2>Prever Melhor Rota</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="time">Tempo:</label>
+        <input type="number" id="time" [(ngModel)]="time" name="time" (ngModelChange)="time = $event | number">
+      </div>
+      <div>
+        <label for="distance">Distância:</label>
+        <input type="number" id="distance" [(ngModel)]="distance" name="distance" (ngModelChange)="distance = $event | number">
+      </div>
+      <button type="submit">Prever</button>
+    </form>
+  
+    <div *ngIf="prediction !== undefined">
+      <h3>Previsão da Rota:</h3>
+      <p>{{ prediction }}</p>
+    </div>
+  </div>
+  
